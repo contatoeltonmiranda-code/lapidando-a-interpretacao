@@ -50,7 +50,7 @@ section{position:relative}.center{text-align:center}.maxw{max-width:760px;margin
 .hero::after{content:"";position:absolute;bottom:-20%;right:-10%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(230,201,122,.10),transparent 65%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center;position:relative;z-index:1}
 .hero-stone{min-height:420px}
-.hero-logo{height:58px;width:auto;display:block;margin-bottom:6px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}@media(max-width:560px){.hero-logo{height:44px}}
+.hero-logo{height:80px;width:auto;display:block;margin-bottom:6px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.55))}@media(max-width:560px){.hero-logo{height:58px}}
 .hero h1{font-family:'Cinzel',serif;font-size:clamp(27px,3.4vw,42px);font-weight:600;margin:18px 0 22px;line-height:1.18;letter-spacing:.3px;text-transform:none}
 .hero .sub{font-size:clamp(15px,1.25vw,17px);max-width:560px;color:var(--texto-suave);margin-bottom:14px}
 .hero .sub strong{color:var(--offwhite);font-weight:600}
@@ -116,6 +116,7 @@ section{position:relative}.center{text-align:center}.maxw{max-width:760px;margin
 .flow-stage .stage-inner{animation:orbitSpinRev var(--roleta-spin,22s) linear infinite;will-change:transform}
 .flow-icon.flow-img{width:var(--stone,200px);height:var(--stone,200px);margin:0 auto 10px;display:flex;align-items:center;justify-content:center}
 .flow-icon.flow-img img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 10px 26px rgba(0,0,0,.5))}
+.flow-icon.flow-img.diamond-img{width:calc(var(--stone,200px) * .8);height:calc(var(--stone,200px) * .8)}
 .flow-stage h3{font-size:18px;color:var(--dourado-claro);letter-spacing:1px;margin-top:2px}
 .flow-stage .stage-label{font-size:11px;letter-spacing:2px;color:var(--texto-suave);text-transform:uppercase;margin-bottom:4px}
 @media(prefers-reduced-motion:reduce){.roleta-orbit,.flow-stage .stage-inner,.roleta-ring,.roleta-arcs,.roleta-hub::before{animation:none}}
@@ -135,11 +136,11 @@ section{position:relative}.center{text-align:center}.maxw{max-width:760px;margin
 @media(hover:hover){.aula-body:hover{transform:translateX(4px);border-color:rgba(212,175,55,.45);box-shadow:0 12px 30px rgba(0,0,0,.4)}}
 .aula-tag{display:inline-block;width:auto;max-width:max-content;align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:1px;color:var(--dourado);background:rgba(212,175,55,.14);padding:4px 11px;border-radius:50px;margin-bottom:10px}
 .aula-tag.disp{color:#9fe6a0;background:rgba(120,200,120,.12)}
-.aula-body h3{font-size:36px;color:var(--offwhite);margin-bottom:6px;line-height:1.25}
-.aula-body p{font-size:28px;color:var(--texto-suave)}
+.aula-body h3{font-size:24px;color:var(--offwhite);margin-bottom:6px;line-height:1.25}
+.aula-body p{font-size:17px;color:var(--texto-suave)}
 .cert-note{display:flex;align-items:center;gap:10px;margin:8px 0 28px 88px;font-size:14px;color:var(--dourado-claro);font-style:italic}
 .cert-note svg{width:20px;height:20px;stroke:var(--dourado);fill:none;stroke-width:1.8;flex:none}
-.cert-note.in-card{margin:14px 0 0;padding:8px 12px;font-size:26px;line-height:1.35;color:var(--dourado-claro);background:rgba(13,13,15,.62);border:1px solid rgba(212,175,55,.32);border-radius:10px;align-items:flex-start;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.6)}
+.cert-note.in-card{margin:14px 0 0;padding:8px 12px;font-size:14px;line-height:1.35;color:var(--dourado-claro);background:rgba(13,13,15,.62);border:1px solid rgba(212,175,55,.32);border-radius:10px;align-items:flex-start;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.6)}
 .cert-note.in-card svg{width:18px;height:18px;margin-top:1px}
 .cert-note.in-card strong{color:#fff}
 .aula.live .aula-num{background:var(--grad-dourado);color:#241d05;border-color:transparent}
@@ -317,7 +318,7 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
         </div>
         <div class="flow-stage" style="--a:240deg">
           <div class="stage-inner">
-            <div class="flow-icon flow-img"><img src="assets/etapa-interpretacao-v2.png" alt="Diamante - Interpretacao" loading="lazy"></div>
+            <div class="flow-icon flow-img diamond-img"><img src="assets/etapa-interpretacao-v2.png" alt="Diamante - Interpretacao" loading="lazy"></div>
             <span class="stage-label">Diamante</span>
             <h3>INTERPRETA&Ccedil;&Atilde;O</h3>
           </div>

@@ -66,7 +66,10 @@ img{max-width:100%;display:block}
 .stone-emerge .ph::before{content:"IMAGEM A FORNECER";position:absolute;top:14px;left:50%;transform:translateX(-50%);font-size:9px;opacity:.6;letter-spacing:1.5px}
 .sec-aulas2{background:var(--preto)}
 .aulas2-grid{display:grid;gap:26px;margin-top:46px}
-.acard{display:grid;grid-template-columns:340px 1fr;gap:30px;align-items:center;background:var(--grad-card);border:1px solid rgba(212,175,55,.16);border-radius:20px;padding:24px;transition:transform .3s,box-shadow .3s,border-color .3s}
+.acard{position:relative;display:grid;grid-template-columns:340px 1fr;gap:30px;align-items:center;background:var(--grad-card);border:1px solid rgba(212,175,55,.16);border-radius:20px;padding:24px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s}
+.acard.has-bg{background:var(--card-bg) center/cover no-repeat}
+.acard.has-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(150deg,rgba(13,13,15,.82) 0%,rgba(13,13,15,.6) 55%,rgba(13,13,15,.78) 100%);pointer-events:none;z-index:0}
+.acard.has-bg>*{position:relative;z-index:1}
 .acard:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.4);box-shadow:0 16px 40px rgba(0,0,0,.45)}
 .yt-thumb{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#15151a,#26262c);display:flex;align-items:center;justify-content:center;border:1px solid rgba(212,175,55,.2)}
 .yt-thumb.has-bg{background:var(--thumb-bg) center/cover no-repeat}
@@ -159,6 +162,10 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
         </div>
       </div>
     </div>
+    <div class="live-alert sr-hidden">
+      <span class="la-pulse" aria-hidden="true"></span>
+      <span class="la-text"><small>Marque na agenda</small>AULA AO VIVO NO DIA 01 DE AGOSTO &Agrave;S 10H</span>
+    </div>
   </div>
   <span class="gold-divider"></span>
 </section>
@@ -168,31 +175,27 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
   <div class="wrap center">
     <span class="eyebrow">ASSISTA AGORA</span>
     <h2 style="margin-top:18px">Suas <span class="gold-it">aulas dispon&iacute;veis</span></h2>
-    <div class="live-alert sr-hidden">
-      <span class="la-pulse" aria-hidden="true"></span>
-      <span class="la-text"><small>Marque na agenda</small>AULA AO VIVO NO DIA 01 DE AGOSTO &Agrave;S 10H</span>
-    </div>
   </div>
   <div class="wrap">
     <div class="aulas2-grid">
-      <div class="acard sr-hidden">
-        <div class="yt-thumb has-bg" style="--thumb-bg:url('assets/aula-1.png')"><span class="yt-label">AULA 1</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
+      <div class="acard has-bg sr-hidden" style="--card-bg:url('assets/aula-1.png')">
+        <div class="yt-thumb"><span class="yt-label">AULA 1</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
         <div class="acard-body">
           <span class="a-tag">AULA 1</span>
           <h3>A verdade que ningu&eacute;m te contou sobre leitura e interpreta&ccedil;&atilde;o</h3>
           <p class="stone-stage">Pedra mais bruta &mdash; o ponto de partida.</p>
         </div>
       </div>
-      <div class="acard sr-hidden">
-        <div class="yt-thumb has-bg" style="--thumb-bg:url('assets/aula-2.png')"><span class="yt-label">AULA 2</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
+      <div class="acard has-bg sr-hidden" style="--card-bg:url('assets/aula-2.png')">
+        <div class="yt-thumb"><span class="yt-label">AULA 2</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
         <div class="acard-body">
           <span class="a-tag">AULA 2</span>
           <h3>O caminho que precisamos percorrer</h3>
           <p class="stone-stage">Pedra come&ccedil;ando a ser lapidada.</p>
         </div>
       </div>
-      <div class="acard sr-hidden">
-        <div class="yt-thumb has-bg" style="--thumb-bg:url('assets/aula-3.png')"><span class="yt-label">AULA 3</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
+      <div class="acard has-bg sr-hidden" style="--card-bg:url('assets/aula-3.png')">
+        <div class="yt-thumb"><span class="yt-label">AULA 3</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
         <div class="acard-body">
           <span class="a-tag">AULA 3</span>
           <h3>As pr&aacute;ticas que geram interesse e evolu&ccedil;&atilde;o</h3>
