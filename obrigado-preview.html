@@ -69,6 +69,9 @@ img{max-width:100%;display:block}
 .acard{display:grid;grid-template-columns:340px 1fr;gap:30px;align-items:center;background:var(--grad-card);border:1px solid rgba(212,175,55,.16);border-radius:20px;padding:24px;transition:transform .3s,box-shadow .3s,border-color .3s}
 .acard:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.4);box-shadow:0 16px 40px rgba(0,0,0,.45)}
 .yt-thumb{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#15151a,#26262c);display:flex;align-items:center;justify-content:center;border:1px solid rgba(212,175,55,.2)}
+.yt-thumb.has-bg{background:var(--thumb-bg) center/cover no-repeat}
+.yt-thumb.has-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(13,13,15,.45),rgba(13,13,15,.62));pointer-events:none}
+.yt-thumb.has-bg>*{position:relative;z-index:1}
 .yt-thumb .yt-label{position:absolute;top:10px;left:12px;font-size:9px;letter-spacing:1.5px;color:var(--dourado-claro);opacity:.7}
 .yt-thumb .yt-play{width:62px;height:62px;border-radius:50%;background:rgba(212,175,55,.92);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,.5)}
 .yt-thumb .yt-play svg{width:24px;height:24px;margin-left:3px;fill:#241d05}
@@ -78,9 +81,10 @@ img{max-width:100%;display:block}
 .acard-body .stone-stage{font-size:13px;color:var(--texto-suave);font-style:italic}
 .cert-pedra{margin-top:16px;display:flex;gap:16px;align-items:center;background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.25);border-radius:14px;padding:14px 18px}
 .cert-pedra .cert-ph{flex-shrink:0;width:80px;height:80px;border-radius:10px;background:var(--grad-card);border:2px dashed rgba(212,175,55,.4);display:flex;align-items:center;justify-content:center;text-align:center;font-size:8px;color:var(--dourado-claro);letter-spacing:.5px;padding:6px}
+.cert-img{flex-shrink:0;width:104px;height:104px;border-radius:12px;object-fit:contain;background:rgba(13,13,15,.4);border:1px solid rgba(212,175,55,.3);padding:6px;filter:drop-shadow(0 6px 16px rgba(212,175,55,.25))}
 .cert-pedra p{font-size:13px;color:var(--texto-suave)}
 .cert-pedra p b{display:block;font-family:'Cinzel',serif;color:var(--dourado-claro);font-size:16px;letter-spacing:1px;margin-top:2px}
-.sec-live{background:var(--grad-escuro);overflow:hidden}
+.sec-live{background:var(--grad-escuro);overflow:hidden;padding-top:24px}
 .sec-live::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(230,201,122,.18),transparent 60%);pointer-events:none}
 .live-card{position:relative;max-width:860px;margin:46px auto 0;background:var(--grad-card);border-radius:26px;padding:44px;text-align:center;overflow:hidden;z-index:1}
 .live-card::before{content:"";position:absolute;inset:-3px;border-radius:29px;padding:3px;background:conic-gradient(from var(--angle),rgba(212,175,55,0) 0deg,rgba(212,175,55,0) 200deg,var(--dourado-claro) 280deg,#fff 320deg,var(--dourado-claro) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:angleSpin 5s linear infinite;z-index:0;pointer-events:none}
@@ -96,6 +100,16 @@ img{max-width:100%;display:block}
 .live-card .cert-diamante p{font-size:14px;color:var(--texto-suave)}
 .live-card .cert-diamante p b{display:block;font-family:'Cinzel',serif;color:var(--dourado-claro);font-size:17px;letter-spacing:1px;margin-top:2px}
 @media (prefers-reduced-motion: reduce){.live-card::before{animation:none}}
+/* CARD DESTAQUE: aviso aula ao vivo (bloco aulas disponiveis) */
+.live-alert{position:relative;max-width:760px;margin:30px auto 0;background:linear-gradient(150deg,#15131a 0%,#241d05 120%);border-radius:20px;padding:26px 32px;display:flex;align-items:center;justify-content:center;gap:18px;text-align:center;overflow:hidden;box-shadow:0 18px 46px rgba(0,0,0,.55),0 0 38px rgba(212,175,55,.28)}
+.live-alert::before{content:"";position:absolute;inset:-2px;border-radius:22px;padding:2px;background:conic-gradient(from var(--angle),rgba(212,175,55,0) 0deg,rgba(212,175,55,0) 200deg,var(--dourado-claro) 280deg,#fff 320deg,var(--dourado-claro) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:angleSpin 6s linear infinite;z-index:0;pointer-events:none}
+.live-alert::after{content:"";position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(230,201,122,.22),transparent 62%);pointer-events:none;z-index:0}
+.live-alert>*{position:relative;z-index:1}
+.live-alert .la-pulse{flex-shrink:0;width:13px;height:13px;border-radius:50%;background:#ff5a4d;box-shadow:0 0 0 0 rgba(255,90,77,.7);animation:laPulse 1.8s ease-out infinite}
+@keyframes laPulse{0%{box-shadow:0 0 0 0 rgba(255,90,77,.7)}70%{box-shadow:0 0 0 14px rgba(255,90,77,0)}100%{box-shadow:0 0 0 0 rgba(255,90,77,0)}}
+.live-alert .la-text{font-family:"Cinzel",serif;font-weight:700;color:var(--dourado-claro);font-size:clamp(16px,2.2vw,22px);letter-spacing:1px;line-height:1.3;text-transform:uppercase}
+.live-alert .la-text small{display:block;font-family:"Montserrat",sans-serif;font-weight:600;font-size:11px;letter-spacing:2px;color:#ff8a7d;text-transform:uppercase;margin-bottom:6px}
+@media (prefers-reduced-motion: reduce){.live-alert::before{animation:none}.live-alert .la-pulse{animation:none}}
 footer{background:#08080a;color:#7e7c73;padding:46px 0 34px;text-align:center;font-size:13px}
 footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-size:18px;letter-spacing:2px;margin-bottom:10px}
 .sr-hidden{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
@@ -108,9 +122,11 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
   .yt-thumb{max-width:480px;margin:0 auto;width:100%}
 }
 @media(max-width:560px){
-  .wrap{padding:0 18px}.sec{padding:60px 0}.sec-conf{padding-top:80px}
+  .wrap{padding:0 18px}.sec{padding:60px 0}.sec-conf{padding-top:80px}.sec-live{padding-top:18px}
   .live-card{padding:30px 22px}
+  .live-alert{flex-direction:column;gap:10px;padding:22px 20px}
   .cert-pedra,.live-card .cert-diamante{flex-direction:column;text-align:center}
+  .cert-img{width:120px;height:120px}
   .btn,.btn.lg{font-size:14px;padding:16px 26px;width:100%;justify-content:center}
 }
 </style>
@@ -152,11 +168,15 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
   <div class="wrap center">
     <span class="eyebrow">ASSISTA AGORA</span>
     <h2 style="margin-top:18px">Suas <span class="gold-it">aulas dispon&iacute;veis</span></h2>
+    <div class="live-alert sr-hidden">
+      <span class="la-pulse" aria-hidden="true"></span>
+      <span class="la-text"><small>Marque na agenda</small>AULA AO VIVO NO DIA 01 DE AGOSTO &Agrave;S 10H</span>
+    </div>
   </div>
   <div class="wrap">
     <div class="aulas2-grid">
       <div class="acard sr-hidden">
-        <div class="yt-thumb"><span class="yt-label">AULA 1</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
+        <div class="yt-thumb has-bg" style="--thumb-bg:url('assets/aula-1.png')"><span class="yt-label">AULA 1</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
         <div class="acard-body">
           <span class="a-tag">AULA 1</span>
           <h3>A verdade que ningu&eacute;m te contou sobre leitura e interpreta&ccedil;&atilde;o</h3>
@@ -164,7 +184,7 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
         </div>
       </div>
       <div class="acard sr-hidden">
-        <div class="yt-thumb"><span class="yt-label">AULA 2</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
+        <div class="yt-thumb has-bg" style="--thumb-bg:url('assets/aula-2.png')"><span class="yt-label">AULA 2</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
         <div class="acard-body">
           <span class="a-tag">AULA 2</span>
           <h3>O caminho que precisamos percorrer</h3>
@@ -172,14 +192,14 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
         </div>
       </div>
       <div class="acard sr-hidden">
-        <div class="yt-thumb"><span class="yt-label">AULA 3</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
+        <div class="yt-thumb has-bg" style="--thumb-bg:url('assets/aula-3.png')"><span class="yt-label">AULA 3</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
         <div class="acard-body">
           <span class="a-tag">AULA 3</span>
           <h3>As pr&aacute;ticas que geram interesse e evolu&ccedil;&atilde;o</h3>
           <p class="stone-stage">Pedra com brilho surgindo.</p>
           <div class="cert-pedra">
-            <div class="cert-ph">IMAGEM DO CERTIFICADO A FORNECER</div>
-            <p>Ao final da Aula 3, voc&ecirc; poder&aacute; emitir o seu:<b>CERTIFICADO PEDRA</b></p>
+            <img class="cert-img" src="assets/cert-pedra-bruta.png" alt="Certificado Pedra Bruta" loading="lazy">
+            <p>Ao final da Aula 3, voc&ecirc; poder&aacute; emitir o seu:<b>CERTIFICADO PEDRA BRUTA</b></p>
           </div>
         </div>
       </div>
@@ -196,14 +216,14 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
       <span class="eyebrow">EVENTO PRINCIPAL</span>
       <h2 style="margin-top:18px">AULA AO VIVO</h2>
       <div class="live-when">
-        <span class="badge-conf">DATA A CONFIRMAR</span>
-        <span class="badge-conf">HOR&Aacute;RIO A CONFIRMAR</span>
+        <span class="badge-conf">1 DE AGOSTO</span>
+        <span class="badge-conf">&Agrave;S 10H</span>
       </div>
       <div class="yt-thumb"><span class="yt-label">AULA AO VIVO</span><span class="yt-play"><svg viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4"/></svg></span><span class="yt-ph-note">THUMBNAIL/LINK A FORNECER</span></div>
       <p class="live-instr">Ative o sininho da aula ao vivo para ser avisado quando ela come&ccedil;ar.</p>
       <a href="#" class="btn lg">Ativar lembrete da aula ao vivo</a>
       <div class="cert-diamante">
-        <div class="cert-ph">IMAGEM DO CERTIFICADO A FORNECER</div>
+        <img class="cert-img" src="assets/cert-diamante.png" alt="Certificado Diamante" loading="lazy">
         <p>Ao participar da aula ao vivo, voc&ecirc; poder&aacute; emitir o seu:<b>CERTIFICADO DIAMANTE</b></p>
       </div>
     </div>
