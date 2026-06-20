@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso Leitura &amp; Interpreta&ccedil;&atilde;o | Nat&aacute;lia Granthon</title>
+<meta name="description" content="Aprenda a despertar o interesse pela leitura e ensinar interpreta&ccedil;&atilde;o com mais clareza e pr&aacute;tica. Curso para professores com certificado reconhecido pelo MEC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --preto:#0D0D0F;--grafite:#1B1B1F;--cinza:#2E2E33;
+  --dourado:#D4AF37;--dourado-claro:#E6C97A;--offwhite:#F3F1E8;--texto-suave:#c9c7bd;
+  --grad-dourado:linear-gradient(135deg,#D4AF37 0%,#E6C97A 100%);
+  --grad-escuro:linear-gradient(160deg,#0D0D0F 0%,#1B1B1F 100%);
+  --grad-card:linear-gradient(150deg,#1B1B1F 0%,#2E2E33 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@property --angle{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes angleSpin{to{--angle:360deg}}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--offwhite);background:var(--preto);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Cinzel',serif;line-height:1.12;font-weight:600;letter-spacing:.5px}
+.pf{font-family:'Playfair Display',serif}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.gold{color:var(--dourado)}.gold-it{color:var(--dourado-claro)}
+section{position:relative}.center{text-align:center}.maxw{max-width:780px;margin:0 auto}
+.badge-conf{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.14);border:1px solid rgba(212,175,55,.5);color:var(--dourado-claro);font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:5px 12px;border-radius:50px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--grad-dourado);color:#2a2208;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:9px 18px;border-radius:50px;box-shadow:0 4px 14px rgba(212,175,55,.3)}
+.eyebrow.outline{background:transparent;border:1.5px solid var(--dourado);color:var(--dourado-claro);box-shadow:none}
+.eyebrow,.eyebrow.outline,.sec-eyebrow{width:auto;max-width:max-content;align-self:center;white-space:nowrap}
+.center .sec-eyebrow,.center .eyebrow{margin-left:auto;margin-right:auto;margin-bottom:18px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;background:var(--grad-dourado);color:#241d05;font-family:'Montserrat',sans-serif;font-weight:700;font-size:16px;letter-spacing:.5px;text-transform:uppercase;padding:18px 36px;border-radius:14px;text-decoration:none;border:none;cursor:pointer;outline:1.5px solid rgba(230,201,122,.5);outline-offset:4px;box-shadow:0 10px 28px rgba(212,175,55,.32),0 0 0 0 rgba(230,201,122,.6);transition:transform .25s,box-shadow .25s,background .25s;animation:btn-glow 2.6s ease-out infinite}
+.btn::before{content:"";position:absolute;top:0;left:0;width:60%;height:100%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.55) 50%,transparent 100%);transform:translateX(-180%) skewX(-18deg);animation:btn-shine 8s ease-in-out infinite;pointer-events:none}
+.btn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 16px 36px rgba(212,175,55,.5)}
+.btn.lg{font-size:18px;padding:22px 46px}.btn.full{width:100%;justify-content:center}
+@keyframes btn-glow{0%{box-shadow:0 10px 28px rgba(212,175,55,.32),0 0 0 0 rgba(230,201,122,.6)}60%{box-shadow:0 10px 28px rgba(212,175,55,.32),0 0 0 12px rgba(230,201,122,0)}100%{box-shadow:0 10px 28px rgba(212,175,55,.32),0 0 0 0 rgba(230,201,122,0)}}
+@keyframes btn-shine{0%{transform:translateX(-180%) skewX(-18deg)}40%{transform:translateX(220%) skewX(-18deg)}100%{transform:translateX(220%) skewX(-18deg)}}
+@media (prefers-reduced-motion: reduce){.btn{animation:none}.btn::before{display:none}}
+.ckline{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--grad-dourado);flex-shrink:0;box-shadow:0 4px 10px rgba(212,175,55,.3)}
+.ckline svg{width:13px;height:13px;stroke:#241d05;stroke-width:3;fill:none}
+.sec{padding:90px 0;position:relative}
+.sec h2{font-size:clamp(28px,3.6vw,46px);margin-bottom:20px}
+.sec .lead{font-size:18px;color:var(--texto-suave)}
+.sparkle{position:absolute;color:var(--dourado);font-size:24px;opacity:.5;pointer-events:none}
+.gold-line{position:absolute;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);pointer-events:none;z-index:2}
+.gold-line.top{top:0}.gold-line.bot{bottom:0}
+.hero{padding:350px 0 100px;background:var(--grad-escuro);background-image:url('assets/vendas-hero-bg.png');background-size:cover;background-position:center top;background-repeat:no-repeat;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.16),transparent 65%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,13,15,.15) 0%,rgba(13,13,15,.35) 38%,rgba(13,13,15,.82) 62%,rgba(13,13,15,.94) 100%);pointer-events:none;z-index:0}
+.hero>.wrap{position:relative;z-index:1}
+.hero-copy{max-width:760px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
+
+.hero-pretext{display:inline-block;background:var(--grad-dourado);color:#241d05;font-family:'Montserrat',sans-serif;font-weight:600;font-size:clamp(13px,1.15vw,16px);line-height:1.45;letter-spacing:.2px;padding:11px 24px;border-radius:50px;margin-bottom:18px;max-width:560px;box-shadow:0 8px 22px rgba(212,175,55,.32)}
+.hero h1{font-family:'Cinzel',serif;font-size:clamp(24px,3vw,38px);font-weight:600;margin:0 0 20px;line-height:1.22;letter-spacing:.3px;text-transform:none;max-width:740px}
+.hero .sub{font-size:clamp(16px,1.35vw,19px);max-width:600px;color:var(--texto-suave);margin-bottom:30px}
+.hero .sub strong{color:var(--offwhite);font-weight:600}
+/* ===== MARQUEE (2 barras diagonais cruzadas, paleta Nat) ===== */
+.marquee{background:transparent;height:122px;overflow-x:clip;overflow-y:visible;position:relative;z-index:30;margin-top:-40px}
+.marquee-bar{position:absolute;left:50%;top:50%;width:150%;overflow:hidden;white-space:nowrap;padding:13px 0;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.marquee-bar.back{background:#2E2E33;transform:translate(-50%,-50%) rotate(-3.2deg);opacity:1;z-index:1}
+.marquee-bar.front{background:var(--grad-dourado);transform:translate(-50%,-50%) rotate(3.2deg);z-index:2}
+.marquee-track{display:inline-block;will-change:transform}
+.marquee-bar.front .marquee-track{animation:scroll 30s linear infinite}
+.marquee-bar.back .marquee-track{animation:scroll-rev 34s linear infinite}
+.marquee-track span{font-family:'Cinzel',serif;font-size:15px;letter-spacing:2.4px;text-transform:uppercase;font-weight:600;padding:0 14px}
+.marquee-bar.front .marquee-track span{color:#241d05}
+.marquee-bar.back .marquee-track span{color:var(--dourado-claro)}
+.marquee-track .dot{opacity:.55}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes scroll-rev{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+@media (prefers-reduced-motion: reduce){.marquee-track{animation:none!important}}
+@media (max-width:768px){.marquee{height:100px;margin-top:-32px}.marquee-bar{width:200%}.marquee-track span{font-size:13px;letter-spacing:1.8px}}
+.hero-baseline{position:absolute;left:0;bottom:0;width:50%;height:13px;background:linear-gradient(90deg,#D4AF37 0%,#E6C97A 55%,transparent 100%);z-index:2;pointer-events:none}
+.sec-curso{background:var(--preto);overflow:hidden}.sec-curso::before{content:"";position:absolute;inset:0;background:url('assets/vendas-sec2-bg.png') center center/cover no-repeat;opacity:.35;pointer-events:none;z-index:0}
+/* ===== BLUR DOURADO DIAGONAL (reutilizavel: secao curso + pacotes) ===== */
+.gold-blur{position:relative}
+.gold-blur > .wrap{position:relative;z-index:1}
+.gb-orb{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.14),rgba(212,175,55,.05) 42%,transparent 70%);filter:blur(28px);pointer-events:none;z-index:0;opacity:.4;animation:goldBreath 9s ease-in-out infinite}
+.gb-orb.tl{top:-180px;left:-120px}
+.gb-orb.br{bottom:-180px;right:-120px;animation-delay:-4.5s}
+@keyframes goldBreath{0%,100%{opacity:.22;transform:scale(.94)}50%{opacity:.55;transform:scale(1.04)}}
+@media(prefers-reduced-motion:reduce){.gb-orb{animation:none;opacity:.36}}
+@media(max-width:560px){.gb-orb{width:340px;height:340px;filter:blur(22px)}}
+.curso-open{text-align:center;max-width:720px;margin:0 auto 10px}
+.curso-open .pf{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,2.8vw,32px);color:var(--dourado-claro);line-height:1.35;margin-bottom:8px}
+.curso-open .lead{font-size:18px;color:var(--texto-suave);margin-top:18px}
+.curso-list{list-style:none;max-width:760px;margin:46px auto 0;display:grid;gap:14px}
+.curso-list li{display:flex;gap:14px;align-items:center;background:var(--grad-card);border:1px solid rgba(212,175,55,.18);border-radius:14px;padding:18px 22px;font-size:16px;color:var(--offwhite)}
+.sec-quem{background:var(--grad-escuro);overflow-x:clip;overflow-y:visible;position:relative}
+.sec-quem .wrap{position:relative;z-index:1}
+/* item 9: bordas gradient douradas espelhadas (topo-direita / base-esquerda) */
+.sec-quem::before,.sec-quem::after{content:"";position:absolute;width:50%;height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);pointer-events:none;z-index:2}
+.sec-quem::before{top:0;right:0}
+.sec-quem::after{bottom:0;left:0}
+/* item 10: split metade esquerda (imagem) + metade direita (stack de cards) */
+.quem-split{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;margin-top:50px;min-height:520px}
+/* coluna esquerda do grid fica vazia: a imagem absoluta ocupa esse espaco, ancorada ao TOPO dos cards */
+.quem-split>.quem-imgholder{visibility:hidden}
+/* imagem full-bleed a esquerda: comeca no topo do split (alinhada aos cards); borda direita com fade transparente (mask) e barra dourada no topo */
+.quem-imgfull{position:absolute;left:calc((100% - 100vw)/2);top:0;bottom:-90px;width:60vw;max-width:880px;z-index:0;overflow:visible;--barH:13px}
+.quem-imgfull img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 62%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 62%,transparent 100%)}
+/* barra dourada horizontal na borda SUPERIOR da imagem */
+.quem-imgfull::after{content:"";position:absolute;left:0;right:0;top:0;height:var(--barH);z-index:3;pointer-events:none;background:linear-gradient(90deg,#D4AF37 0%,#E6C97A 100%);-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 62%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 62%,transparent 100%);filter:drop-shadow(0 6px 22px rgba(212,175,55,.42))}
+.quem-imgfull::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,15,.18) 0%,transparent 30%,transparent 70%,rgba(13,13,15,.0) 100%);z-index:2;pointer-events:none}
+/* glow dourado pulsante emanando da luz do livro (lado esquerdo) */
+.quem-glow{position:absolute;inset:-60px -40px -60px -80px;z-index:-1;pointer-events:none;background:radial-gradient(60% 55% at 34% 52%,rgba(212,175,55,.34),rgba(230,201,122,.12) 45%,transparent 72%);filter:blur(4px);animation:quemGlowPulse 5s ease-in-out infinite}
+@keyframes quemGlowPulse{0%,100%{opacity:.5;transform:scale(.98)}50%{opacity:1;transform:scale(1.04)}}
+/* shimmer dourado deslizando ao longo da barra horizontal do topo */
+.quem-shine{position:absolute;left:0;right:0;top:0;height:var(--barH);z-index:4;pointer-events:none;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 62%,transparent 100%);mask-image:linear-gradient(90deg,#000 0%,#000 62%,transparent 100%)}
+.quem-shine::before{content:"";position:absolute;top:0;bottom:0;width:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.9),transparent);transform:translateX(-160%);animation:quemShine 4.5s ease-in-out infinite;animation-delay:1s}
+@keyframes quemShine{0%{transform:translateX(-160%)}28%,100%{transform:translateX(420%)}}
+/* sparkles douradas sutis subindo sobre a imagem */
+.quem-spark{position:absolute;width:5px;height:5px;z-index:5;pointer-events:none;border-radius:50%;background:radial-gradient(circle,#fff 0%,var(--dourado-claro) 45%,transparent 70%);opacity:0;filter:drop-shadow(0 0 4px rgba(230,201,122,.8));animation:quemSpark 6s ease-in-out infinite}
+.quem-spark.s1{left:20%;bottom:16%;animation-delay:0s}
+.quem-spark.s2{left:42%;bottom:8%;width:4px;height:4px;animation-delay:1.8s}
+.quem-spark.s3{left:30%;bottom:30%;width:6px;height:6px;animation-delay:3.4s}
+.quem-spark.s4{left:14%;bottom:42%;width:4px;height:4px;animation-delay:4.6s}
+@keyframes quemSpark{0%{opacity:0;transform:translateY(0) scale(.4)}15%{opacity:1;transform:translateY(-14px) scale(1)}45%{opacity:0;transform:translateY(-42px) scale(.5)}100%{opacity:0;transform:translateY(-42px) scale(.5)}}
+@media(prefers-reduced-motion:reduce){.quem-imgfull img,.quem-glow,.quem-shine::before,.quem-spark{animation:none}.quem-spark{display:none}.quem-glow{opacity:.7}}
+.quem-imgholder span{font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(230,201,122,.6)}
+.quem-stack{display:grid;gap:16px}
+.quem-card{position:relative;background:var(--grafite);border:1px solid rgba(212,175,55,.18);border-radius:16px;padding:22px 24px;font-size:15.5px;color:var(--offwhite);line-height:1.4;display:flex;flex-direction:row;align-items:center;gap:16px}
+.quem-card::before{content:"";position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(135deg,rgba(212,175,55,.55),transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}
+/* item 11: icone de flecha sem quadrado, a esquerda, centralizado vertical com o texto */
+.quem-card .qi{width:26px;height:26px;background:none;border:none;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.quem-card .qi svg{width:24px;height:24px;stroke:var(--dourado);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.sec-acesso{background:var(--preto)}
+/* O QUE VOCE TERA ACESSO: grid BENTO (cards blur no hover + tamanhos diferentes, estilo Ketox, paleta Nat) */
+.acesso-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(150px,auto);gap:16px;margin-top:50px}
+.acesso-card{position:relative;background:var(--grad-card);border:1px solid rgba(212,175,55,.18);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;justify-content:center;gap:14px;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,opacity .35s ease,filter .35s ease}
+.acesso-card .ai{position:relative;z-index:1;width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.2),rgba(46,46,51,.1) 70%);border:1px solid rgba(212,175,55,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.acesso-card .ai svg{width:24px;height:24px;stroke:var(--dourado-claro);stroke-width:1.6;fill:none}
+.acesso-card h3{position:relative;z-index:1;font-size:16px;color:var(--offwhite);line-height:1.3;letter-spacing:.3px}
+.acesso-card p{position:relative;z-index:1;font-size:13.5px;color:var(--texto-suave);line-height:1.45}
+.acesso-card.feat{background:linear-gradient(150deg,#1f1b12 0%,#2E2E33 100%)}
+.acesso-card.feat h3{color:var(--dourado-claro);font-size:18px}
+/* tamanhos diferentes: 8 cards em grid 4col x 3 rows (sem buracos) */
+.acesso-card:nth-child(1){grid-column:1/3;grid-row:1}   /* wide */
+.acesso-card:nth-child(2){grid-column:3;grid-row:1}
+.acesso-card:nth-child(3){grid-column:4;grid-row:1/3}   /* tall */
+.acesso-card:nth-child(4){grid-column:1;grid-row:2}
+.acesso-card:nth-child(5){grid-column:2;grid-row:2}
+.acesso-card:nth-child(6){grid-column:3;grid-row:2}
+.acesso-card:nth-child(7){grid-column:1/3;grid-row:3}   /* wide bottom */
+.acesso-card:nth-child(8){grid-column:3/5;grid-row:3}   /* wide bottom */
+/* efeito de desfoque: hover desfoca os demais (Ketox) */
+@media(hover:hover){
+  .acesso-grid:hover .acesso-card{opacity:.5;filter:blur(2.5px)}
+  .acesso-grid:hover .acesso-card:hover{opacity:1;filter:blur(0);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.5)}
+}
+.sec-pacotes{background:var(--grad-escuro);overflow:hidden}
+.sec-pacotes::before,.sec-pacotes::after{content:"";position:absolute;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);pointer-events:none;z-index:2}
+.sec-pacotes::before{top:0}.sec-pacotes::after{bottom:0}
+.sec-pacotes .pacotes-bg{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}.sec-pacotes .pacotes-bg::before{content:"";position:absolute;inset:0;background:url('assets/vendas-sec2-bg.png') center center/cover no-repeat;transform:scaleX(-1);opacity:.32}.sec-pacotes .pacotes-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(212,175,55,.22),rgba(230,201,122,.10) 45%,transparent 75%);mix-blend-mode:screen}.pacotes-open{text-align:center;font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,2.4vw,28px);color:var(--dourado-claro);max-width:920px;margin:0 auto 14px;line-height:1.35}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:920px;margin:50px auto 0;align-items:stretch}
+.price-card{position:relative;background:var(--grad-card);border:1px solid rgba(212,175,55,.2);border-radius:24px;padding:38px 32px;display:flex;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.price-card.featured{border-color:transparent;background:linear-gradient(150deg,#1f1b12 0%,#2E2E33 100%)}
+.price-card.featured::before{content:"";position:absolute;inset:-2px;border-radius:26px;padding:2px;background:conic-gradient(from var(--angle),rgba(212,175,55,0) 0deg,rgba(212,175,55,0) 200deg,var(--dourado) 270deg,var(--dourado-claro) 305deg,#fff 325deg,var(--dourado-claro) 345deg,rgba(212,175,55,0) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:angleSpin 6s linear infinite;pointer-events:none;z-index:0}
+.price-card>*{position:relative;z-index:1}
+@media (prefers-reduced-motion: reduce){.price-card.featured::before{animation:none}}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--grad-dourado);color:#241d05;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 18px;border-radius:50px;box-shadow:0 6px 18px rgba(212,175,55,.4);white-space:nowrap;z-index:2}
+.price-card h3{font-family:'Cinzel',serif;font-size:24px;color:var(--dourado-claro);margin-bottom:4px;letter-spacing:1px}
+.price-card .pc-tag{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--texto-suave);margin-bottom:22px}
+.price-list{list-style:none;display:grid;gap:11px;margin-bottom:26px}
+.price-list li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--offwhite);line-height:1.4}
+.price-list li .ck{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--grad-dourado);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.price-list li .ck svg{width:12px;height:12px;stroke:#241d05;stroke-width:3;fill:none}
+.price-list li.extra{color:var(--dourado-claro);font-weight:600}
+.price-foot{margin-top:auto}
+.price-val{text-align:center;margin-bottom:20px}
+.price-val .parc{font-family:'Cinzel',serif;font-size:clamp(24px,3vw,32px);color:var(--offwhite);line-height:1.1}
+.price-val .avista{display:block;font-size:14px;color:var(--texto-suave);margin-top:6px}
+.price-val .avista b{color:var(--dourado-claro);font-weight:600}
+.sec-result{background:var(--preto)}
+/* RESULTADOS: checklist uniforme 2 colunas (cards escuros arredondados, check dourado a esquerda) */
+.result-grid{list-style:none;display:grid;grid-template-columns:repeat(12,1fr);gap:16px;max-width:1080px;margin:50px auto 0}
+.result-grid li{position:relative;display:flex;align-items:center;gap:14px;background:var(--grad-card);border:1px solid rgba(212,175,55,.18);border-radius:18px;padding:22px 24px;font-size:16px;color:var(--offwhite);line-height:1.35;overflow:hidden;transition:transform .35s ease,box-shadow .35s ease}.result-grid li::before{content:"";position:absolute;top:0;left:22px;width:92px;height:5px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,#D4AF37,#E6C97A);pointer-events:none}.result-grid li:nth-child(-n+3){grid-column:span 4}.result-grid li:nth-child(n+4){grid-column:span 3}
+.result-grid li:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.45)}
+.result-grid li .ckline{margin:0}
+.result-grid li.feat{background:linear-gradient(150deg,#1f1b12 0%,#2E2E33 100%)}
+.result-grid li.feat span:last-child{color:var(--dourado-claro)}
+.sec-garantia{background:var(--grad-escuro);overflow:hidden}.sec-garantia::before{content:"";position:absolute;inset:0;background:url('assets/vendas-garantia-bg.png') center center/cover no-repeat;z-index:0;pointer-events:none}.sec-garantia::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,13,15,.55) 0%,rgba(13,13,15,.30) 35%,rgba(13,13,15,.72) 70%,rgba(13,13,15,.82) 100%);z-index:0;pointer-events:none}
+.sec-garantia>.wrap{position:relative;z-index:1}.garantia-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:54px;align-items:center}
+.seal-wrap{position:relative;width:230px;height:230px;margin:0 auto}
+.seal-rings{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(212,175,55,.4);animation:sealRot 16s linear infinite}
+.seal-rings.r2{inset:16px;border:1px dashed rgba(230,201,122,.5);animation:sealRotRev 22s linear infinite}
+.seal-rings.r3{inset:30px;border:1px solid rgba(212,175,55,.25);animation:sealRot 28s linear infinite}
+@keyframes sealRot{to{transform:rotate(360deg)}}
+@keyframes sealRotRev{to{transform:rotate(-360deg)}}
+.seal-core{position:absolute;inset:46px;border-radius:50%;background:radial-gradient(circle at 50% 40%,rgba(212,175,55,.22),rgba(13,13,15,.95) 72%);border:1px solid rgba(212,175,55,.45);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 0 30px rgba(212,175,55,.2) inset;animation:sealPulse 4.5s ease-in-out infinite}
+@keyframes sealPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.seal-core .sc-num{font-family:'Cinzel',serif;font-size:46px;font-weight:700;color:var(--dourado-claro);line-height:1}
+.seal-core .sc-lab{font-family:'Cinzel',serif;font-size:13px;letter-spacing:3px;color:var(--dourado);text-transform:uppercase;margin-top:2px}
+.seal-glow{position:absolute;inset:-30px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.28),transparent 66%);z-index:-1;animation:sealPulse 4.5s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.seal-rings,.seal-core,.seal-glow{animation:none}}
+.garantia-body h2{margin-bottom:14px}
+.garantia-body p{font-size:17px;color:var(--texto-suave);margin-bottom:12px}
+.garantia-body p strong{color:var(--dourado-claro);font-weight:600}
+.sec-prof{background:var(--preto)}
+.prof-split{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.prof-split .prof-img{order:2}
+.prof-split .prof-body{order:1}
+.prof-img{position:relative}
+.prof-frame{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.55);z-index:1}
+.prof-frame::before{content:"";position:absolute;inset:0;border-radius:22px;padding:3px;background:conic-gradient(from var(--angle),rgba(212,175,55,0) 0deg,rgba(212,175,55,0) 200deg,var(--dourado) 270deg,var(--dourado-claro) 305deg,#fff 325deg,var(--dourado-claro) 345deg,rgba(212,175,55,0) 360deg);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;animation:angleSpin 6s linear infinite;pointer-events:none;z-index:2}
+.prof-frame img{width:100%;aspect-ratio:9/16;object-fit:cover;object-position:50% 18%;border-radius:22px;display:block}
+.prof-ring{position:absolute;inset:-14px;border-radius:30px;border:1.5px solid rgba(212,175,55,.35);z-index:0;animation:profRingPulse 4.5s ease-in-out infinite}
+.prof-img .prof-seal{position:absolute;width:142px;height:142px;bottom:-30px;right:-30px;z-index:4;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(13,13,15,.92),rgba(13,13,15,.82) 70%);border:1px solid rgba(212,175,55,.55);box-shadow:0 8px 26px rgba(0,0,0,.55),0 0 0 1px rgba(230,201,122,.18) inset}
+.prof-seal .seal-rot{position:absolute;inset:0;animation:psSpin 14s linear infinite;will-change:transform}
+.prof-seal .seal-text{font-family:"Cinzel",serif;font-weight:600;font-size:9.5px;letter-spacing:.5px;fill:var(--dourado);text-transform:uppercase}
+.prof-seal .ps-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:30px;height:30px;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 2px 6px rgba(212,175,55,.45))}
+.prof-seal .ps-core svg{width:100%;height:100%}
+@keyframes psSpin{to{transform:rotate(360deg)}}
+.prof-img .glow{position:absolute;inset:-40px;border-radius:34px;background:radial-gradient(circle at 50% 42%,rgba(212,175,55,.28),transparent 66%);z-index:-1;animation:profGlowPulse 4.5s ease-in-out infinite}
+@keyframes profGlowPulse{0%,100%{opacity:.55;transform:scale(.97)}50%{opacity:1;transform:scale(1.03)}}
+@keyframes profRingPulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.75;transform:scale(1.02)}}
+@media(prefers-reduced-motion:reduce){.prof-frame::before,.prof-img .glow,.prof-ring,.prof-seal .seal-rot{animation:none}}
+.prof-body h2{margin-top:22px;margin-bottom:10px}
+.prof-body p{font-size:16px;color:var(--texto-suave);margin-bottom:14px}
+.prof-body p strong{color:var(--dourado-claro);font-weight:600}
+.sec-faq{background:var(--grad-escuro)}
+.faq-list{max-width:820px;margin:46px auto 0;display:grid;gap:14px}
+.faq-item{background:var(--grad-card);border:1px solid rgba(212,175,55,.2);border-radius:14px;overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;padding:22px 26px;font-family:'Cinzel',serif;font-size:17px;color:var(--offwhite);display:flex;align-items:center;justify-content:space-between;gap:16px;letter-spacing:.3px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .fq-ico{flex-shrink:0;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--dourado);position:relative;transition:transform .3s}
+.faq-item summary .fq-ico::before,.faq-item summary .fq-ico::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--dourado-claro)}
+.faq-item summary .fq-ico::before{width:11px;height:2px}
+.faq-item summary .fq-ico::after{width:2px;height:11px;transition:transform .3s}
+.faq-item[open] summary .fq-ico::after{transform:translate(-50%,-50%) scaleY(0)}
+.faq-item[open] summary{color:var(--dourado-claro)}
+.faq-item .faq-ans{padding:0 26px 22px;font-size:15px;color:var(--texto-suave);line-height:1.55}
+.faq-item .faq-ans strong{color:var(--dourado-claro);font-weight:600}
+.sec-final{background:var(--preto);overflow:hidden;text-align:center}.sec-final{background-image:linear-gradient(rgba(13,13,15,.62),rgba(13,13,15,.72)),url('assets/vendas-final-bg.png');background-size:cover;background-position:center center;background-repeat:no-repeat}
+.sec-final::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.18),transparent 60%);pointer-events:none}
+.final-glow{position:absolute;top:0;bottom:0;width:38%;pointer-events:none;z-index:0;opacity:0;animation:finalBreath 7s ease-in-out infinite}
+.final-glow.gl{left:-8%;background:radial-gradient(ellipse 60% 70% at 0% 50%,rgba(230,201,122,.3),rgba(212,175,55,.12) 45%,transparent 72%)}
+.final-glow.gr{right:-8%;background:radial-gradient(ellipse 60% 70% at 100% 50%,rgba(230,201,122,.3),rgba(212,175,55,.12) 45%,transparent 72%);animation-delay:-3.5s}
+@keyframes finalBreath{0%,100%{opacity:0}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.final-glow{animation:none;opacity:.5}}
+.final-inner{position:relative;z-index:1;max-width:780px;margin:0 auto;background:linear-gradient(150deg,rgba(27,27,31,.92) 0%,rgba(46,46,51,.85) 100%);border:1px solid rgba(212,175,55,.35);border-radius:26px;padding:64px 56px;box-shadow:0 24px 60px rgba(0,0,0,.5),inset 0 0 0 1px rgba(230,201,122,.08)}
+@media(max-width:560px){.final-inner{padding:44px 26px;border-radius:20px}}
+.final-inner h2{font-family:'Cinzel',serif;font-size:clamp(30px,4vw,50px);margin-bottom:16px;line-height:1.1}
+.final-inner .punch{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--dourado-claro);margin:0 0 30px}
+footer{position:relative;background:#08080a;color:#7e7c73;padding:46px 0 34px;text-align:center;font-size:13px}
+footer::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);pointer-events:none}
+footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-size:18px;letter-spacing:2px;margin-bottom:10px}
+.foot-ph{font-size:11px;color:#5f5d56;margin-top:14px;letter-spacing:.5px}
+.sr-hidden{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.sr-hidden.sr-visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.sr-hidden,.sr-hidden.sr-visible{opacity:1;transform:none;transition:none}.sparkle{display:none}*{scroll-behavior:auto}}
+@media(max-width:900px){
+  .hero{padding-top:220px}
+  .quem-split{grid-template-columns:1fr;gap:30px;min-height:0}
+  .quem-split>.quem-imgholder{display:none}
+  .quem-imgfull{position:static;left:auto;width:auto;max-width:none;height:240px;margin:30px 18px 6px;border-radius:16px;order:-1;clip-path:none}
+  .quem-imgfull img{object-position:50% 60%;clip-path:none;-webkit-mask-image:none;mask-image:none}
+  .quem-imgfull::after,.quem-imgfull::before{display:none}
+  .acesso-grid{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
+  .acesso-card:nth-child(n){grid-column:auto;grid-row:auto}
+  .acesso-grid:hover .acesso-card{opacity:1;filter:none}
+  .pricing-grid{grid-template-columns:1fr;max-width:480px;gap:40px}
+  .result-grid{grid-template-columns:1fr 1fr}.result-grid li:nth-child(n){grid-column:auto !important}
+  .garantia-grid{grid-template-columns:1fr;gap:36px;text-align:center}
+  .garantia-body{text-align:center}
+  .prof-split{grid-template-columns:1fr;gap:34px}
+  .prof-split .prof-img{max-width:340px;margin:0 auto;order:-1}
+  .prof-split .prof-body{order:0}
+}
+@media(max-width:560px){
+  .wrap{padding:0 18px}.sec{padding:60px 0}.hero{padding:150px 0 60px}
+  .quem-imgfull{height:200px;margin:24px 0 4px}
+  .acesso-grid{grid-template-columns:1fr}
+  .result-grid{grid-template-columns:1fr}.result-grid li:nth-child(n){grid-column:auto !important}
+  .btn,.btn.lg{font-size:14px;padding:16px 26px;width:100%;justify-content:center}
+  .eyebrow,.eyebrow.outline,.sec-eyebrow{white-space:normal;text-align:center;line-height:1.4}
+  .prof-img .prof-seal{width:108px;height:108px;bottom:-18px;right:-8px}
+  .prof-seal .seal-text{font-size:9px;letter-spacing:1px}
+  .seal-wrap{width:200px;height:200px}
+  .price-card{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+  <span class="sparkle" style="top:90px;left:42%;">&#10022;</span>
+  <span class="sparkle" style="bottom:80px;left:6%;font-size:18px;">&#10022;</span>
+  <div class="wrap">
+    <div class="hero-copy sr-hidden">
+      <span class="hero-pretext">Muitos alunos n&atilde;o perderam o interesse pela leitura.</span>
+      <h1>Eles apenas <span class="gold-it">nunca foram conduzidos</span> pelo caminho da leitura, da compreens&atilde;o e da interpreta&ccedil;&atilde;o.</h1>
+      <p class="sub">Aprenda como despertar o interesse pela leitura e ensinar interpreta&ccedil;&atilde;o com <strong>mais clareza e pr&aacute;tica</strong>.</p>
+      <a href="#pacotes" class="btn lg">Quero ensinar interpreta&ccedil;&atilde;o com resultado</a>
+    </div>
+  </div>
+  <span class="hero-baseline" aria-hidden="true"></span></section>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-bar back">
+    <div class="marquee-track">
+      <span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span>
+      <span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span>
+    </div>
+  </div>
+  <div class="marquee-bar front">
+    <div class="marquee-track">
+      <span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span>
+      <span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span><span>+Clareza e + Pr&aacute;tica</span><span class="dot">&#10022;</span>
+    </div>
+  </div>
+</div>
+<section class="sec sec-curso gold-blur">
+  <span class="gb-orb tl" aria-hidden="true"></span>
+  <span class="gb-orb br" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="curso-open sr-hidden">
+      <span class="eyebrow sec-eyebrow" style="margin-bottom:18px">O CURSO</span>
+      <p class="pf">A interpreta&ccedil;&atilde;o n&atilde;o melhora<br>apenas com exerc&iacute;cios. Ela precisa ser constru&iacute;da.</p>
+      <p class="lead">O curso Leitura e Interpreta&ccedil;&atilde;o foi criado para ajudar professores a:</p>
+    </div>
+    <ul class="curso-list">
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>despertar mais interesse pela leitura</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>conduzir leitura, compreens&atilde;o e interpreta&ccedil;&atilde;o</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>tornar as aulas menos mec&acirc;nicas</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>trabalhar textos e enunciados com mais inten&ccedil;&atilde;o</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>transformar interpreta&ccedil;&atilde;o em um processo mais claro e aplic&aacute;vel</span></li>
+    </ul>
+  </div>
+</section>
+<section class="sec sec-quem">
+  <span class="sparkle" style="top:60px;right:8%;color:var(--dourado-claro);">&#10022;</span>
+  <div class="wrap center">
+    <span class="eyebrow outline sec-eyebrow">PARA QUEM &Eacute;</span>
+    <h2>Para quem <span class="gold-it">&eacute; esse curso?</span></h2>
+    <p class="lead maxw" style="margin:0 auto">Esse curso foi criado especialmente para professores que:</p>
+  </div>
+  <div class="wrap">
+    <div class="quem-split">
+      <div class="quem-imgfull sr-hidden"><span class="quem-glow" aria-hidden="true"></span><img src="assets/vendas-paraquem-img.png" alt="Livro aberto com luz dourada" loading="eager" decoding="async"><span class="quem-shine" aria-hidden="true"></span><span class="quem-spark s1" aria-hidden="true"></span><span class="quem-spark s2" aria-hidden="true"></span><span class="quem-spark s3" aria-hidden="true"></span><span class="quem-spark s4" aria-hidden="true"></span></div>
+      <div class="quem-imgholder" aria-hidden="true"></div>
+      <div class="quem-stack">
+        <div class="quem-card sr-hidden"><span class="qi"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span>t&ecirc;m alunos com dificuldade em interpretar</span></div>
+        <div class="quem-card sr-hidden"><span class="qi"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span>percebem desinteresse pela leitura</span></div>
+        <div class="quem-card sr-hidden"><span class="qi"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span>n&atilde;o t&ecirc;m tempo para criar aulas do zero</span></div>
+        <div class="quem-card sr-hidden"><span class="qi"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span>querem aulas mais interessantes e organizadas</span></div>
+        <div class="quem-card sr-hidden"><span class="qi"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span>desejam mais seguran&ccedil;a para trabalhar interpreta&ccedil;&atilde;o</span></div>
+        <div class="quem-card sr-hidden"><span class="qi"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span><span>sonham com alunos evoluindo na leitura e interpreta&ccedil;&atilde;o</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec sec-acesso">
+  <div class="wrap center">
+    <span class="eyebrow sec-eyebrow">CONTE&Uacute;DO</span>
+    <h2>O que voc&ecirc; <span class="gold-it">ter&aacute; acesso</span></h2>
+  </div>
+  <div class="wrap">
+    <div class="acesso-grid">
+      <div class="acesso-card sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><h3>Tipos e estrat&eacute;gias de leitura</h3></div>
+      <div class="acesso-card feat sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span><h3>G&ecirc;neros textuais</h3><p>conte&uacute;do + formas diferenciadas de ensino</p></div>
+      <div class="acesso-card feat sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></span><h3>Tipologias textuais</h3><p>conte&uacute;do + formas de ensino</p></div>
+      <div class="acesso-card sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><h3>Projetos de leitura e interpreta&ccedil;&atilde;o</h3></div>
+      <div class="acesso-card sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><h3>Enunciados e r&eacute;gua de interpreta&ccedil;&atilde;o</h3></div>
+      <div class="acesso-card sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg></span><h3>Habilidades de interpreta&ccedil;&atilde;o</h3></div>
+      <div class="acesso-card sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span><h3>Formas de despertar mais interesse pela leitura</h3></div>
+      <div class="acesso-card sr-hidden"><span class="ai"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="4"/></svg></span><h3>Caminhos para conduzir leitura, compreens&atilde;o e interpreta&ccedil;&atilde;o na pr&aacute;tica</h3></div>
+    </div>
+  </div>
+</section>
+<section class="sec sec-pacotes gold-blur" id="pacotes">
+  <span class="pacotes-bg" aria-hidden="true"></span>
+  <span class="gb-orb tl" aria-hidden="true"></span>
+  <span class="gb-orb br" aria-hidden="true"></span>
+  <div class="wrap center">
+    <span class="eyebrow sec-eyebrow">PACOTES</span>
+    <h2>Escolha o <span class="gold-it">seu pacote</span></h2>
+    <p class="pacotes-open">Para despertar o interesse pela leitura e conduzir interpreta&ccedil;&atilde;o com mais clareza, voc&ecirc; precisa fazer uma escolha.</p>
+  </div>
+  <div class="wrap">
+    <div class="pricing-grid">
+      <div class="price-card sr-hidden">
+        <h3>Pacote Livro</h3>
+        <span class="pc-tag">Acesso completo ao curso</span>
+        <ul class="price-list">
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Tipos e estrat&eacute;gias de leitura</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>G&ecirc;neros textuais</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Tipologias textuais</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Projetos de leitura e interpreta&ccedil;&atilde;o</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Enunciados + r&eacute;gua</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Habilidades de interpreta&ccedil;&atilde;o</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Slides em PDF</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Acesso por 6 meses + acompanhamento em grupo</span></li>
+        </ul>
+        <div class="price-foot">
+          <div class="price-val">
+            <span class="parc">12x de R$72,09</span>
+            <span class="avista">ou <b>R$697 &agrave; vista</b></span>
+          </div>
+          <a href="#" class="btn full">Quero o Pacote Livro</a>
+        </div>
+      </div>
+      <div class="price-card featured sr-hidden">
+        <span class="price-badge">Mais completo</span>
+        <h3>Pacote Biblioteca</h3>
+        <span class="pc-tag">Tudo do Livro + materiais e mentorias</span>
+        <ul class="price-list">
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Tipos e estrat&eacute;gias de leitura</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>G&ecirc;neros textuais</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Tipologias textuais</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Projetos de leitura e interpreta&ccedil;&atilde;o</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Enunciados + r&eacute;gua</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Habilidades de interpreta&ccedil;&atilde;o</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Slides edit&aacute;veis</span></li>
+          <li><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Acesso por 6 meses + acompanhamento em grupo</span></li>
+          <li class="extra"><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Drive de textos + banco de quest&otilde;es</span></li>
+          <li class="extra"><span class="ck"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>4 mentorias extras gravadas</span></li>
+        </ul>
+        <div class="price-foot">
+          <div class="price-val">
+            <span class="parc">12x de R$87,60</span>
+            <span class="avista">ou <b>R$897 &agrave; vista</b></span>
+          </div>
+          <a href="#" class="btn full">Quero o Pacote Biblioteca</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec sec-result">
+  <div class="wrap center">
+    <span class="eyebrow outline sec-eyebrow">RESULTADOS</span>
+    <h2>Resultados que voc&ecirc; vai <span class="gold-it">come&ccedil;ar a perceber</span></h2>
+  </div>
+  <div class="wrap">
+    <ul class="result-grid">
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Alunos mais interessados na leitura</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mais clareza ao trabalhar interpreta&ccedil;&atilde;o</span></li>
+      <li class="sr-hidden feat"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Aulas menos mec&acirc;nicas</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mais seguran&ccedil;a para conduzir textos e enunciados</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Menos improvisa&ccedil;&atilde;o no planejamento</span></li>
+      <li class="sr-hidden"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mais participa&ccedil;&atilde;o e envolvimento dos alunos</span></li>
+      <li class="sr-hidden feat"><span class="ckline"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span><span>Mais confian&ccedil;a no pr&oacute;prio trabalho</span></li>
+    </ul>
+  </div>
+</section>
+<section class="sec sec-garantia">
+  <span class="gold-line top" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="garantia-grid">
+      <div class="seal-wrap sr-hidden" aria-hidden="true">
+        <span class="seal-glow"></span>
+        <span class="seal-rings"></span>
+        <span class="seal-rings r2"></span>
+        <span class="seal-rings r3"></span>
+        <span class="seal-core"><span class="sc-num">7</span><span class="sc-lab">Dias</span></span>
+      </div>
+      <div class="garantia-body sr-hidden">
+        <span class="eyebrow sec-eyebrow" style="margin-left:0;margin-bottom:22px">GARANTIA</span>
+        <h2>7 dias de <span class="gold-it">garantia</span></h2>
+        <p>Voc&ecirc; ter&aacute; <strong>7 dias de garantia</strong> para conhecer o curso por dentro.</p>
+        <p>Se perceber que o curso n&atilde;o faz sentido para voc&ecirc;, basta solicitar o reembolso dentro do prazo.</p>
+      </div>
+    </div>
+  </div>
+  <span class="gold-line bot" aria-hidden="true"></span>
+</section>
+<section class="sec sec-prof">
+  <div class="wrap">
+    <div class="prof-split">
+      <div class="prof-img sr-hidden">
+        <span class="glow" aria-hidden="true"></span>
+        <span class="prof-ring" aria-hidden="true"></span>
+        <div class="prof-frame">
+          <img src="assets/professora-vendas.png" alt="Nat&aacute;lia Granthon" loading="lazy">
+        </div>
+        <div class="prof-seal" aria-hidden="true">
+          <svg class="seal-rot" viewBox="0 0 142 142">
+            <defs><path id="vend-seal-path" d="M 71 71 m -54 0 a 54 54 0 1 1 108 0 a 54 54 0 1 1 -108 0"/></defs>
+            <text class="seal-text"><textPath href="#vend-seal-path" startOffset="0" textLength="339" lengthAdjust="spacingAndGlyphs">NAT&#193;LIA GRANTHON &#183; LAPIDANDO A INTERPRETA&#199;&#195;O &#183;</textPath></text>
+          </svg>
+          <span class="ps-core">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M6 4 H18 L22 9 L12 21 L2 9 Z" fill="#E6C97A" stroke="#D4AF37" stroke-width="1"/><path d="M2 9 H22 M6 4 L9 9 L12 21 M18 4 L15 9 L12 21 M9 9 H15" stroke="#0D0D0F" stroke-width=".7" opacity=".5"/></svg>
+          </span>
+        </div>
+      </div>
+      <div class="prof-body sr-hidden">
+        <span class="eyebrow outline sec-eyebrow" style="margin-left:0">A PROFESSORA</span>
+        <h2>Quem ser&aacute; <span class="gold-it">sua professora?</span></h2>
+        <p><strong>Nat&aacute;lia Granthon</strong> &eacute; professora de Portugu&ecirc;s, autora best-seller de Gram&aacute;tica Tem&aacute;tica na Pr&aacute;tica e criadora de cursos e materiais que j&aacute; impactaram milhares de professores.</p>
+        <p>Depois de anos ensinando Portugu&ecirc;s e formando professores, desenvolveu um caminho para tornar leitura e interpreta&ccedil;&atilde;o mais claras, interessantes e aplic&aacute;veis na pr&aacute;tica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="sec sec-faq">
+  <div class="wrap center">
+    <span class="eyebrow sec-eyebrow">D&Uacute;VIDAS</span>
+    <h2>Perguntas <span class="gold-it">frequentes</span></h2>
+  </div>
+  <div class="wrap">
+    <div class="faq-list">
+      <details class="faq-item sr-hidden">
+        <summary>O curso possui certificado?<span class="fq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-ans">Sim. O certificado &eacute; emitido e reconhecido pelo <strong>MEC</strong>, garantindo a valida&ccedil;&atilde;o oficial da sua participa&ccedil;&atilde;o e conclus&atilde;o do curso.</div>
+      </details>
+      <details class="faq-item sr-hidden">
+        <summary>As aulas s&atilde;o ao vivo?<span class="fq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-ans">N&atilde;o. As aulas s&atilde;o gravadas para que voc&ecirc; possa assistir e reassistir no seu pr&oacute;prio ritmo.</div>
+      </details>
+      <details class="faq-item sr-hidden">
+        <summary>Por quanto tempo terei acesso?<span class="fq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-ans">Voc&ecirc; ter&aacute; acesso completo ao curso por <strong>6 meses</strong>.</div>
+      </details>
+      <details class="faq-item sr-hidden">
+        <summary>Receberei os materiais utilizados nas aulas?<span class="fq-ico" aria-hidden="true"></span></summary>
+        <div class="faq-ans">Sim. Os materiais variam de acordo com o pacote escolhido.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<section class="sec sec-final">
+  <span class="final-glow gl" aria-hidden="true"></span>
+  <span class="final-glow gr" aria-hidden="true"></span>
+  <span class="sparkle" style="top:50px;left:12%;">&#10022;</span>
+  <span class="sparkle" style="bottom:50px;right:12%;font-size:18px;">&#10022;</span>
+  <div class="wrap">
+    <div class="final-inner sr-hidden">
+      <h2>A interpreta&ccedil;&atilde;o <span class="gold-it">n&atilde;o nasce pronta.</span></h2>
+      <p class="punch">Ela precisa ser constru&iacute;da etapa por etapa.</p>
+      <a href="#pacotes" class="btn lg">Quero ensinar interpreta&ccedil;&atilde;o com resultado</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">LAPIDANDO A INTERPRETA&Ccedil;&Atilde;O</div>
+    <p>Nat&aacute;lia Granthon &middot; Forma&ccedil;&atilde;o para professores</p>
+    <p style="margin-top:8px;opacity:.7">&copy; 2026 &middot; Todos os direitos reservados</p>
+    <p class="foot-ph">Botoes de compra: checkout a configurar &middot; sem destino real neste preview</p>
+  </div>
+</footer>
+<script>
+(function(){
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var srEls = document.querySelectorAll('.sr-hidden');
+  if(rm){ srEls.forEach(function(e){e.classList.add('sr-visible')}); }
+  else if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('sr-visible'); io.unobserve(en.target); } });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    srEls.forEach(function(e){io.observe(e)});
+  } else { srEls.forEach(function(e){e.classList.add('sr-visible')}); }
+})();
+</script>
+</body>
+</html>
