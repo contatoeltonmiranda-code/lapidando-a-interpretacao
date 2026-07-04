@@ -72,7 +72,7 @@ section{position:relative}.center{text-align:center}.maxw{max-width:780px;margin
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes scroll-rev{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 @media (prefers-reduced-motion: reduce){.marquee-track{animation:none!important}}
-@media (max-width:768px){.marquee{height:158px;margin-top:-32px}.marquee-bar{width:200%}.marquee-bar.back{transform:translate(-50%,-50%) rotate(-8deg)}.marquee-bar.front{transform:translate(-50%,-50%) rotate(8deg)}.marquee-bar.back .marquee-track span{color:#F3F1E8;text-shadow:0 1px 2px rgba(0,0,0,.6)}.marquee-track span{font-size:14px;letter-spacing:1.8px}}
+@media (max-width:768px){.marquee{height:158px;margin-top:-32px}.marquee-bar{width:200%}.marquee-bar.back{transform:translate(-50%,-50%) rotate(-8deg)}.marquee-bar.front{transform:translate(-50%,-50%) rotate(8deg)}.marquee-bar.back .marquee-track span{color:#F3F1E8;text-shadow:0 1px 2px rgba(0,0,0,.6)}.marquee-track span{font-size:14px;letter-spacing:1.8px}.hero-baseline{display:none}}
 .hero-baseline{position:absolute;left:0;bottom:0;width:50%;height:13px;background:linear-gradient(90deg,#D4AF37 0%,#E6C97A 55%,transparent 100%);z-index:2;pointer-events:none}
 .sec-curso{background:var(--preto);overflow:hidden}.sec-curso::before{content:"";position:absolute;inset:0;background:url('assets/vendas-sec2-bg.png') center center/cover no-repeat;opacity:.35;pointer-events:none;z-index:0}
 /* ===== BLUR DOURADO DIAGONAL (reutilizavel: secao curso + pacotes) ===== */
@@ -278,6 +278,10 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
   .quem-mobtop img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
   .sec-quem{padding-top:0}
   .acesso-grid{grid-template-columns:1fr}
+  .acesso-card{display:grid;grid-template-columns:auto 1fr;grid-auto-rows:min-content;align-items:center;column-gap:16px;row-gap:4px;flex-direction:row;justify-content:flex-start;text-align:left;padding:20px 22px}
+  .acesso-card .ai{grid-column:1;grid-row:1/-1;align-self:center}
+  .acesso-card h3{grid-column:2}
+  .acesso-card p{grid-column:2}
   .result-grid{grid-template-columns:1fr}.result-grid li:nth-child(n){grid-column:auto !important}
   .btn,.btn.lg{font-size:14px;padding:16px 26px;width:100%;justify-content:center}
   .eyebrow,.eyebrow.outline,.sec-eyebrow{white-space:normal;text-align:center;line-height:1.4}
