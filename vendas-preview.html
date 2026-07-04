@@ -72,7 +72,7 @@ section{position:relative}.center{text-align:center}.maxw{max-width:780px;margin
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes scroll-rev{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
 @media (prefers-reduced-motion: reduce){.marquee-track{animation:none!important}}
-@media (max-width:768px){.marquee{height:100px;margin-top:-32px}.marquee-bar{width:200%}.marquee-track span{font-size:13px;letter-spacing:1.8px}}
+@media (max-width:768px){.marquee{height:158px;margin-top:-32px}.marquee-bar{width:200%}.marquee-bar.back{transform:translate(-50%,-50%) rotate(-8deg)}.marquee-bar.front{transform:translate(-50%,-50%) rotate(8deg)}.marquee-bar.back .marquee-track span{color:#F3F1E8;text-shadow:0 1px 2px rgba(0,0,0,.6)}.marquee-track span{font-size:14px;letter-spacing:1.8px}}
 .hero-baseline{position:absolute;left:0;bottom:0;width:50%;height:13px;background:linear-gradient(90deg,#D4AF37 0%,#E6C97A 55%,transparent 100%);z-index:2;pointer-events:none}
 .sec-curso{background:var(--preto);overflow:hidden}.sec-curso::before{content:"";position:absolute;inset:0;background:url('assets/vendas-sec2-bg.png') center center/cover no-repeat;opacity:.35;pointer-events:none;z-index:0}
 /* ===== BLUR DOURADO DIAGONAL (reutilizavel: secao curso + pacotes) ===== */
@@ -121,6 +121,7 @@ section{position:relative}.center{text-align:center}.maxw{max-width:780px;margin
 @keyframes quemSpark{0%{opacity:0;transform:translateY(0) scale(.4)}15%{opacity:1;transform:translateY(-14px) scale(1)}45%{opacity:0;transform:translateY(-42px) scale(.5)}100%{opacity:0;transform:translateY(-42px) scale(.5)}}
 @media(prefers-reduced-motion:reduce){.quem-imgfull img,.quem-glow,.quem-shine::before,.quem-spark{animation:none}.quem-spark{display:none}.quem-glow{opacity:.7}}
 .quem-imgholder span{font-family:'Cinzel',serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:rgba(230,201,122,.6)}
+.quem-mobtop{display:none}
 .quem-stack{display:grid;gap:16px}
 .quem-card{position:relative;background:var(--grafite);border:1px solid rgba(212,175,55,.18);border-radius:16px;padding:22px 24px;font-size:15.5px;color:var(--offwhite);line-height:1.4;display:flex;flex-direction:row;align-items:center;gap:16px}
 .quem-card::before{content:"";position:absolute;inset:0;border-radius:16px;padding:1px;background:linear-gradient(135deg,rgba(212,175,55,.55),transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;pointer-events:none}
@@ -271,8 +272,11 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
   .prof-split .prof-body{order:0}
 }
 @media(max-width:560px){
-  .wrap{padding:0 18px}.sec{padding:60px 0}.hero{padding:150px 0 60px}
-  .quem-imgfull{height:200px;margin:24px 0 4px}
+  .wrap{padding:0 18px}.sec{padding:60px 0}.hero{padding:150px 0 60px}.hero-copy{padding-top:250px}
+  .quem-imgfull{display:none}
+  .quem-mobtop{display:block;width:100%;height:260px;margin:0 0 34px;overflow:hidden}
+  .quem-mobtop img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;display:block}
+  .sec-quem{padding-top:0}
   .acesso-grid{grid-template-columns:1fr}
   .result-grid{grid-template-columns:1fr}.result-grid li:nth-child(n){grid-column:auto !important}
   .btn,.btn.lg{font-size:14px;padding:16px 26px;width:100%;justify-content:center}
@@ -324,6 +328,7 @@ footer .foot-brand{font-family:'Cinzel',serif;color:var(--dourado-claro);font-si
   </div>
 </section>
 <section class="sec sec-quem">
+  <div class="quem-mobtop" aria-hidden="true"><img src="assets/vendas-paraquem-img.png" alt="" loading="eager" decoding="async"></div>
   <span class="sparkle" style="top:60px;right:8%;color:var(--dourado-claro);">&#10022;</span>
   <div class="wrap center">
     <span class="eyebrow outline sec-eyebrow">PARA QUEM &Eacute;</span>
